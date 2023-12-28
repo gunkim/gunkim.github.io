@@ -1,0 +1,26 @@
+# Setup
+title:               Gun.Kim
+tagline:             'Back-end Developer'
+description:         'Hello World!'
+url:                 https://gunkim.github.io
+baseurl:             ''
+paginate:            5
+permalink:           pretty
+github:
+  repo:              https://github.com/gunkim
+
+# About/contact
+author:
+  name:              Gun Kim
+  url:               https://twitter.com/mdo
+  email:             gunkim.dev@gmail.com
+
+# Gems
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-feed
+
+# Custom vars
+version:             1.1.0
+google_analytics_id: #UA-XXXX-Y
