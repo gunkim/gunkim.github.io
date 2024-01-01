@@ -326,6 +326,34 @@ a.sidebar-nav-item:focus {
   color: #9a9a9a;
 }
 
+ul.post-tags {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+li.post-tag {
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+li.post-tag a {
+  display: block;
+  padding: 5px 10px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+li.post-tag a:hover {
+  background-color: #e0e0e0;
+  color: #000;
+}
+
 /* Related posts */
 .related {
   padding-top: 2rem;
