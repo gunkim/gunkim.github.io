@@ -9,7 +9,7 @@ toc: true
   <ul class="post-tags">
     {% for tag in page.tags %}
     <li class="post-tag">
-      <a href="{{ '/tags/' | absolute_url }}{{ tag | slugify }}/">
+      <a href="{{ '/tags/#' }}{{ tag | slugify }}">
         {{ tag }}
       </a>
     </li>
