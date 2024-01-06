@@ -19,7 +19,6 @@ plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-feed
-  - jekyll-toc
 
 # Custom vars
 version:             1.1.0
