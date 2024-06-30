@@ -127,6 +127,8 @@ Spring은 AOP의 접근 방식을 사용하여, 인터페이스의 유무와 관
 
 인터페이스를 구현한 클래스의 경우, JDK Dynamic Proxy는 Java의 [Reflection API](https://docs.oracle.com/javase/tutorial/reflect)를 사용하여 인터페이스 기반의 프록시 객체를 동적으로 생성합니다. 런타임에 AOP 대상 객체가 구현한 인터페이스를 상속하고 구현합니다.
 
+이 방식은 앞선 예제 코드의 Proxy 구현을 그대로 런타임에 대신 해준다고 이해하면 됩니다.
+
 ### CGLIB Proxy
 
 인터페이스가 없는 클래스의 경우, Spring은 [CGLIB](https://github.com/cglib/cglib) 라이브러리를 사용합니다. CGLIB은 자바 바이트 코드를 조작하여 런타임에 원본 클래스를 상속받는 서브 클래스를 생성함으로써 프록시를 구현합니다. 이 방식은 인터페이스 없이도 프록시 생성이 가능하게 합니다.
