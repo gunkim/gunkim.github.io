@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 프록시 패턴만 이해해도 Spring AOP는 쉽다!
+title: 결국 Spring AOP는 프록시 패턴의 확장이다
 tags: ["Spring", "Design Pattern"]
 ---
 
