@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 스프링에서 EntityManager는 어떻게 관리될까?
+title: "'Spring 트랜잭션의 마법' EntityManager가 매번 새로운 이유"
 tags: ["Spring", "JPA"]
 ---
 
