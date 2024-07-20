@@ -59,6 +59,11 @@
 .highlight .vg { color: #033 } /* Name.Variable.Global */
 .highlight .vi { color: #033 } /* Name.Variable.Instance */
 .highlight .il { color: #f60 } /* Literal.Number.Integer.Long */
+/* 소스코드 가로로 길 경우 가로 스크롤 허용 */
+.highlight pre, pre {
+    white-space: pre;
+    overflow-x: auto;
+}
 
 .css .o,
 .css .o + .nt,
