@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 스프링에서 Entity Manager는 어떻게 관리될까?
+title: 스프링에서 EntityManager는 어떻게 관리될까?
 tags: ["Spring", "JPA"]
 ---
 
