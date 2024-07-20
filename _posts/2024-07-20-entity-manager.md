@@ -34,11 +34,11 @@ class PersonRepository(
 
 ## EntityManager의 정체는 프록시다!
 
-스프링에서 `@PersistenceContext`를 통해 주입받는 `EntityManager`는 실제로는 프록시 객체입니다. 이 프록시 객체는 스레드 로컬(Thread Local) 변수를 사용하여 각 트랜잭션마다 다른 `EntityManager` 인스턴스를 제공합니다.
+스프링에서 `@PersistenceContext`를 통해 주입받는 `EntityManager`는 실제로는 프록시 객체입니다. 이 프록시 객체는 스레드 로컬(Thread Local) 변수를 사용하여 각 트랜잭션마다 다른 `EntityManager` 인스턴스를 제공합니다. 
 
-따라서, 실제로는 매 트랜잭션마다 새로운 `EntityManager`가 생성되고, 트랜잭션이 끝나면 해당 `EntityManager`는 닫힙니다.
+따라서, 매 트랜잭션마다 새로운 `EntityManager`가 생성되고, 트랜잭션이 끝나면 해당 `EntityManager`는 닫힙니다.
 
-다음은 `EntityManager` 프록시 객체가 어떻게 생성되는지를 보여주는 코드입니다
+스프링에서 기본적으로 `PersistenceContextType`은 `TRANSACTION`이기 때문에, SharedEntityManager를 기준으로 설명하겠습니다. 다음은 `EntityManager` 프록시 객체가 어떻게 생성되는지를 보여주는 코드입니다.
 
 ```java
 public static EntityManager createSharedEntityManager(EntityManagerFactory emf, @Nullable Map<?, ?> properties,
@@ -60,7 +60,7 @@ public static EntityManager createSharedEntityManager(EntityManagerFactory emf, 
 
 ## 실제 EntityManager는 어떻게 생성될까?
 
-`SharedEntityManagerInvocationHandler`의 `invoke` 코드를 살펴보면 다음과 같은 코드가 있습니다:
+`SharedEntityManagerInvocationHandler`의 `invoke` 코드를 살펴보면 다음과 같은 코드가 있습니다
 
 ```java
 EntityManager target = EntityManagerFactoryUtils.doGetTransactionalEntityManager(this.targetFactory, this.properties, this.synchronizedWithTransaction);
