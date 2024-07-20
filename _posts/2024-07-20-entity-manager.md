@@ -4,9 +4,13 @@ title: 스프링에서 Entity Manager는 어떻게 관리될까?
 tags: ["Spring", "JPA"]
 ---
 
+## 개요
+
 스프링 프레임워크에서 `spring-data-jpa` 의존성을 사용하여 JPA/Hibernate를 활용할 때, 직접적으로 `EntityManager`를 조작하는 경우는 드뭅니다. 대부분의 경우 `JpaRepository`를 통해 간접적으로 사용하며, 필요 시에는 `@PersistenceContext` 어노테이션을 통해 `EntityManager` 객체를 주입받아 사용합니다.
 
 이 글에서는 스프링에서 `EntityManager`가 어떻게 생성되고 관리되는지, 그리고 트랜잭션과의 관계를 중점으로 설명하겠습니다.
+
+---
 
 ## @PersistenceContext 살펴보기
 
