@@ -31,3 +31,8 @@ defaults:
       path: ""
     values:
       toc: true
+
+collections:
+  learns:
+    output: true
+    permalink: /learn/:categories/:title/
