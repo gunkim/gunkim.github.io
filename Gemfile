@@ -1,7 +1,12 @@
-source "https://rubygems.org"
-gemspecs
+# frozen_string_literal: true
 
-gem "jekyll-paginate"
-gem "jekyll-sitemap"
-gem "jekyll-feed"
-gem "json"
+source "https://rubygems.org"
+
+gem "kramdown-parser-gfm"
+gem "webrick"
+gem "csv"
+gem "bigdecimal"
+gem "base64"
+gem "logger"
+
+gemspec

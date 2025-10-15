@@ -1,0 +1,12 @@
+---
+layout: default
+---
+<header>
+  <h1><img style="width: 50px; margin: 0; float: left;" src="logo.png"/> {{ site.title }}</h1>
+  {%-if site.theme_config.show_description-%}
+    <p>{{ site.description }}</p>
+  {%-endif-%}
+</header>
+{%-include menu_item.html collection=site.data.menu.entries-%}
+
+{{ content }}
