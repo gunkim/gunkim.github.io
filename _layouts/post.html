@@ -5,31 +5,34 @@ layout: default
 {%-include back_link.html-%}
 
 <article>
+    <header>
+        <h1>{{ page.title }}</h1>
 
-    <p class="post-meta">
-        <time datetime="{{ page.date }}">{{ page.date | date: site.theme_config.date_format }}</time>
-    </p>
+        <dl class="post-meta">
+            <dt>Published</dt>
+            <dd><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: site.theme_config.date_format }}</time></dd>
 
-    <h1>{{ page.title }}</h1>
+            {%- if page.category or page.categories -%}
+            <dt>Category</dt>
+            <dd>
+                {%- if page.category -%}
+                {{ page.category }}
+                {%- elsif page.categories -%}
+                {{ page.categories | join: ", " }}
+                {%- endif -%}
+            </dd>
+            {%- endif -%}
 
-    {%- if page.category or page.categories -%}
-    <p class="post-meta">
-        {%- if page.category -%}
-        <span>Category: {{ page.category }}</span>
-        {%- elsif page.categories -%}
-        <span>Categories: {{ page.categories | join: ", " }}</span>
+            {%- if page.tags -%}
+            <dt>Tags</dt>
+            <dd>{{ page.tags | join: ", " }}</dd>
+            {%- endif -%}
+        </dl>
+
+        {%- if page.draft -%}
+        <p><mark><strong>이 글은 초안입니다.</strong></mark></p>
         {%- endif -%}
-        {%- if page.tags -%}
-         | <span>Tags: {{ page.tags | join: ", " }}</span>
-        {%- endif -%}
-    </p>
-    {%- endif -%}
-
-    {%- if page.draft -%}
-    <p style="text-align: center; font-weight: bold;">이 글은 초안입니다.</p>
-
-    <hr/>
-    {%- endif -%}
+    </header>
 
     {{ page.content }}
 </article>
