@@ -74,13 +74,32 @@ table, th, td {
 code {
   color: white;
   background: black;
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
 }
 
 div.highlighter-rouge code {
   display: block;
   overflow-x: auto;
-  white-space: pre-wrap;
+  white-space: pre;
   padding: 1rem;
+}
+
+.highlight {
+  overflow-x: auto;
+  border-radius: 5px;
+
+  pre {
+    margin: 0;
+    padding: 1rem;
+    overflow-x: auto;
+  }
+
+  code {
+    display: block;
+    white-space: pre;
+    overflow-x: auto;
+  }
 }
 
 blockquote {
