@@ -4,35 +4,34 @@ layout: default
 
 {%-include back_link.html-%}
 
-<article>
-    <header>
-        <h1>{{ page.title }}</h1>
+<article class="post">
+    <header class="post-header">
+        <h1 class="post-title">{{ page.title }}</h1>
 
-        <dl class="post-meta">
-            <dt>Published</dt>
-            <dd><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: site.theme_config.date_format }}</time></dd>
+        {%- if page.draft -%}
+        <p class="post-draft-notice"><mark><strong>이 글은 초안입니다.</strong></mark></p>
+        {%- endif -%}
+
+        <div class="post-meta">
+            <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: site.theme_config.date_format }}</time>
 
             {%- if page.category or page.categories -%}
-            <dt>Category</dt>
-            <dd>
+            <span class="post-category">
                 {%- if page.category -%}
                 {{ page.category }}
                 {%- elsif page.categories -%}
                 {{ page.categories | join: ", " }}
                 {%- endif -%}
-            </dd>
+            </span>
             {%- endif -%}
 
             {%- if page.tags -%}
-            <dt>Tags</dt>
-            <dd>{{ page.tags | join: ", " }}</dd>
+            <span class="post-tags">{{ page.tags | join: ", " }}</span>
             {%- endif -%}
-        </dl>
-
-        {%- if page.draft -%}
-        <p><mark><strong>이 글은 초안입니다.</strong></mark></p>
-        {%- endif -%}
+        </div>
     </header>
 
-    {{ page.content }}
+    <div class="post-content">
+        {{ page.content }}
+    </div>
 </article>

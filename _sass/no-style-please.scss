@@ -37,7 +37,89 @@ body {
   overflow-wrap: break-word;
 }
 
-.post-meta { text-align: right; }
+// Post styling
+.post-header {
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.post-title {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin: 0 0 1rem 0;
+  font-weight: bold;
+}
+
+.post-draft-notice {
+  margin: 1rem 0;
+}
+
+.post-meta {
+  font-size: 0.875rem;
+  color: #666;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+
+  time {
+    margin-right: 0.5rem;
+  }
+
+  .post-category,
+  .post-tags {
+    background: #f5f5f5;
+    padding: 0.25rem 0.5rem;
+    border-radius: 3px;
+    font-size: 0.8rem;
+  }
+
+  .post-category::before {
+    content: "· ";
+  }
+
+  .post-tags::before {
+    content: "# ";
+  }
+}
+
+.post-content {
+  h1 {
+    font-size: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+    margin-top: 2.5rem;
+    margin-bottom: 0.875rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  h4, h5, h6 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    line-height: 1.7;
+  }
+
+  img {
+    margin: 2rem auto;
+  }
+
+  ul, ol {
+    line-height: 1.7;
+  }
+}
 
 h2, h3, h4, h5, h6 { margin-top: 3rem; }
 
