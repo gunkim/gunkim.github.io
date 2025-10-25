@@ -4,7 +4,7 @@ title: MySQL InnoDB Locking
 category: mysql
 ---
 
-## Shared Lock (S-Lock, 공유 잠금) & Exclusive Lock (X-Lock, 배타 잠금)
+## Shared Lock (S-Lock, 공유 잠금) and Exclusive Lock (X-Lock, 배타 잠금)
 행(Record) 수준의 Lock인 것은 동일하나 **Shared Lock**은 다른 트랜잭션에서의 읽기를 허용하고, **Exclusive Lock**은 읽기를 불가능하게 한다는 차이가 있다.
 
 **Shared Lock**은 `SELECT ... FOR UPDATE`를 사용하고, **Exclusive Lock**은 `SELECT ... FOR SHARE` 구문을 사용한다.
@@ -13,7 +13,7 @@ category: mysql
 **S-Lock**과 **X-Lock**을 테이블 수준에서 설정하는 경우를 **Intention Lock**이라고 표현한다. 예를 들어, S-Lock을 설정할 의도가 있는 경우 이를 **Intention Shared Lock (IS Lock)** 이라고 부르며, X-Lock을 설정할 의도가 있는 경우 이를 **Intention Exclusive Lock (IX Lock)** 이라고 부른다.
 
 **Intention Lock**의 동작은 S, X Lock을 획득하기 위해 더 강한 Intention Lock을 획득해야 한다.
-- 트랜잭션이 테이블의 레코드에 대해 S-Lock을 획득하기 전에 먼저 테이블에 대한 IS-Lock 또는 그보다 강한 Lock을 획득해야 한다.
+- 트랜잭션이 테이블의 레코드에 대해 S-Lock을 획득하기 전에 먼저 테이블에 대한 IS-Lock 또는 그보다 강한 Lock을 획득해야 한다.
 - 트랜잭션이 테이블의 레코드에 대해 X-Lock을 획득하기 전에 먼저 테이블에 대한 IX-Lock을 획득해야 한다.
 
 |     | X (Exclusive) | IX (Intention Exclusive) | S (Shared) | IS (Intention Shared) |
